@@ -1,0 +1,9 @@
+person,uttrykk,antall,diameter_snitt,diameter_min,diameter_maks,x_snitt,y_snitt
+3,Neutral,38,22.5,7.2,73.1,152.0,264.0
+3,Surprised,36,26.0,8.3,69.6,151.0,254.0
+9,Neutral,30,21.2,8.4,88.8,214.0,280.0
+9,Surprised,40,21.9,7.1,77.6,212.0,248.0
+13,Neutral,32,19.9,7.5,56.5,237.0,342.0
+13,Surprised,51,16.3,6.6,51.0,275.0,372.0
+18,Neutral,19,17.1,7.4,34.6,178.0,336.0
+18,Surprised,16,24.9,9.5,79.3,182.0,285.0

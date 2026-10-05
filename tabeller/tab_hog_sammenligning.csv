@@ -1,0 +1,4 @@
+bilde,gradientstyrke_snitt,andel_sterke_piksler,storste_retning
+Simple (person 18),0.0929,0.1145,0-20 deg
+Medium (person 4),0.1546,0.2015,0-20 deg
+Complex (person 5),0.1847,0.2648,80-100 deg

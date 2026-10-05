@@ -1,0 +1,11 @@
+parameter,verdi,lengde
+cellestorrelse,4,434340
+cellestorrelse,8,106596
+cellestorrelse,16,25668
+cellestorrelse,32,5940
+blokkstorrelse,1,27648
+blokkstorrelse,2,106596
+blokkstorrelse,3,231012
+bins,4,47376
+bins,9,106596
+bins,18,213192

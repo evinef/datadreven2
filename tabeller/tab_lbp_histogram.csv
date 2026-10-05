@@ -1,0 +1,5 @@
+bilde,andel_kode_255,andel_kode_0,fem_vanligste_koder,andel_i_fem_vanligste
+A: Face (person 18),0.1296,0.0331,"255, 0, 227, 195, 225",0.2276
+B: Hair (person 9),0.1332,0.0351,"255, 227, 195, 225, 62",0.3569
+C: Skin (person 3),0.1053,0.0291,"255, 15, 0, 127, 120",0.2191
+D: Fabric (person 4),0.1122,0.0731,"255, 0, 62, 30, 191",0.2628

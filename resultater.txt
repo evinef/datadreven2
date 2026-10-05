@@ -1,0 +1,238 @@
+Fourier: bildestørrelse (512, 383), antall koeffisienter 196096
+Low-pass: MSE støybilde uten filter = 0.00588
+Low-pass: beste radius ideell = 135, MSE = 0.00362
+Low-pass: beste radius gaussisk = 125, MSE = 0.00257
+
+[tab_fourier_komprimering]
+ prosent  beholdt  kompresjonsforhold      MSE  PSNR_dB
+     0.5      981               199.9 0.006690    21.75
+     1.0     1961               100.0 0.005481    22.61
+     2.0     3923                50.0 0.004456    23.51
+     5.0     9805                20.0 0.003293    24.82
+    10.0    19611                10.0 0.002419    26.16
+    20.0    39221                 5.0 0.001513    28.20
+    50.0    98048                 2.0 0.000410    33.87
+PCA: X har form (149, 4096), verdier fra 0.00 til 1.00
+PCA: antall egenverdier over 1e-10 = 147
+PCA: 90 % varians ved k = 25, 95 % ved k = 49
+PCA: andel varians for PC1-PC5 = 0.316, 0.229, 0.094, 0.046, 0.039
+
+[tab_pca_mse]
+  k      MSE  forklart_varians  lagrede_tall  kompresjonsforhold
+  1 0.025277            0.3156          8341               73.17
+  5 0.010203            0.7237         25321               24.10
+ 10 0.006984            0.8109         46546               13.11
+ 20 0.004347            0.8823         88996                6.86
+ 50 0.001769            0.9521        216346                2.82
+100 0.000425            0.9885        428596                1.42
+148 0.000000            1.0000        632356                0.97
+PCA: MSE per person (k=20): p0=0.0035, p1=0.0045, p2=0.0059, p3=0.0066, p4=0.0061, p5=0.0032, p6=0.0054, p7=0.0050, p8=0.0044, p9=0.0045, p10=0.0028, p11=0.0037, p12=0.0033, p13=0.0034, p14=0.0046, p15=0.0051, p16=0.0033, p17=0.0030, p18=0.0042
+PCA: MSE per uttrykk (k=20): Anger=0.0043, Contempt=0.0047, Disgust=0.0042, Fear=0.0046, Happy=0.0044, Neutral=0.0038, Sad=0.0043, Surprised=0.0045
+PCA: spredning mellom personer (std) = 0.00113, mellom uttrykk (std) = 0.00027
+PCA ukjent person: k = 1, 5, 10, 20, 50, 100, 140
+PCA ukjent person: MSE kjente = 0.02328, 0.01028, 0.00695, 0.00428, 0.00169, 0.00036, 0.00000
+PCA ukjent person: MSE person 18 = 0.06576, 0.01099, 0.01027, 0.00752, 0.00587, 0.00474, 0.00428
+
+[tab_hog_sammenligning]
+             bilde  gradientstyrke_snitt  andel_sterke_piksler storste_retning
+Simple (person 18)                0.0929                0.1145        0-20 deg
+ Medium (person 4)                0.1546                0.2015        0-20 deg
+Complex (person 5)                0.1847                0.2648      80-100 deg
+
+[tab_hog_parametere]
+     parameter  verdi  lengde
+cellestorrelse      4  434340
+cellestorrelse      8  106596
+cellestorrelse     16   25668
+cellestorrelse     32    5940
+blokkstorrelse      1   27648
+blokkstorrelse      2  106596
+blokkstorrelse      3  231012
+          bins      4   47376
+          bins      9  106596
+          bins     18  213192
+LBP-eksempel: naboer med klokka = [5, 9, 1, 7, 8, 3, 2, 4]
+LBP-eksempel: biter = [0, 1, 0, 1, 1, 0, 0, 0], kode = 26, funksjonen gir 26
+
+[tab_lbp_histogram]
+               bilde  andel_kode_255  andel_kode_0    fem_vanligste_koder  andel_i_fem_vanligste
+ A: Face (person 18)          0.1296        0.0331  255, 0, 227, 195, 225                 0.2276
+  B: Hair (person 9)          0.1332        0.0351 255, 227, 195, 225, 62                 0.3569
+  C: Skin (person 3)          0.1053        0.0291   255, 15, 0, 127, 120                 0.2191
+D: Fabric (person 4)          0.1122        0.0731    255, 0, 62, 30, 191                 0.2628
+
+[tab_lbp_avstand]
+bilde      A      B      C      D
+    A 0.0000 0.1261 0.1107 0.0773
+    B 0.1261 0.0000 0.2885 0.1928
+    C 0.1107 0.2885 0.0000 0.1662
+    D 0.0773 0.1928 0.1662 0.0000
+
+[tab_blob_per_bilde]
+ person   uttrykk  antall  diameter_snitt  diameter_min  diameter_maks  x_snitt  y_snitt
+      3   Neutral      38            22.5           7.2           73.1    152.0    264.0
+      3 Surprised      36            26.0           8.3           69.6    151.0    254.0
+      9   Neutral      30            21.2           8.4           88.8    214.0    280.0
+      9 Surprised      40            21.9           7.1           77.6    212.0    248.0
+     13   Neutral      32            19.9           7.5           56.5    237.0    342.0
+     13 Surprised      51            16.3           6.6           51.0    275.0    372.0
+     18   Neutral      19            17.1           7.4           34.6    178.0    336.0
+     18 Surprised      16            24.9           9.5           79.3    182.0    285.0
+
+[tab_blob_enkeltblobs_p3_Neutral]
+    x     y  diameter
+111.6  37.0      15.1
+156.8  52.8       7.6
+137.1  66.5      13.1
+ 97.0  74.7      13.2
+300.0  83.4      11.2
+187.1  94.7      42.1
+108.2 183.5      27.5
+ 76.2 187.7      10.9
+248.3 207.6      30.6
+149.5 209.8      33.6
+320.7 214.0      18.8
+241.9 222.7      17.2
+171.8 224.8      15.5
+146.5 225.5      28.5
+254.1 232.1      26.0
+ 95.2 237.3      11.0
+313.1 250.1      10.5
+ 42.4 254.8      73.1
+347.7 256.6      13.3
+ 44.5 276.3      53.5
+ 73.2 284.2      53.8
+ 97.8 295.0      18.6
+181.7 305.8      13.8
+217.5 307.0      13.4
+ 93.8 316.8       9.7
+194.9 327.5       7.2
+ 40.8 339.6       8.5
+196.6 342.7      12.6
+184.2 355.3      41.4
+  6.8 355.8       9.2
+ 36.6 368.3      33.5
+189.5 385.7      22.5
+108.4 390.5      11.0
+227.4 391.8      41.6
+ 27.6 404.6       7.5
+146.1 410.3      53.1
+ 19.0 420.8       7.8
+177.8 430.6      18.9
+
+[tab_blob_enkeltblobs_p9_Surprised]
+    x     y  diameter
+103.9  28.5      12.2
+286.2  35.5      10.2
+193.1  64.6      56.8
+275.0  65.9      22.6
+189.2  68.2      77.6
+ 91.3  68.6      33.0
+327.2  76.7      11.2
+287.9 126.6      15.2
+169.2 160.6       9.4
+361.8 170.1      23.6
+306.5 177.8      36.2
+256.9 180.5      18.9
+149.8 183.2      13.3
+248.3 183.9      14.2
+163.5 189.6      10.3
+216.2 189.8      17.1
+133.1 193.0      23.2
+292.7 204.0      40.6
+ 94.8 228.8      28.0
+221.6 241.4      16.7
+194.7 242.9       7.1
+297.2 250.5      14.9
+327.2 268.8      31.6
+228.2 280.0      12.3
+306.2 298.6      29.5
+225.1 310.9      15.8
+306.5 341.5      20.9
+327.5 345.5      20.9
+ 57.2 352.8      12.5
+195.7 353.9      46.1
+128.1 373.2       8.5
+ 58.8 376.6      22.2
+301.3 378.2      11.9
+117.1 379.8      11.3
+ 95.0 392.2      12.1
+127.4 412.0       8.3
+288.3 418.2      17.3
+114.3 419.4      30.5
+136.7 448.2      22.8
+267.0 449.9      28.5
+fig_blob_2_farge | person 3 Neutral | Dark blobs | 38 blobs
+fig_blob_2_farge | person 3 Neutral | Bright blobs | 19 blobs
+fig_blob_2_farge | person 9 Surprised | Dark blobs | 40 blobs
+fig_blob_2_farge | person 9 Surprised | Bright blobs | 21 blobs
+fig_blob_3_min_areal | person 3 Neutral | minArea=10 | 82 blobs
+fig_blob_3_min_areal | person 3 Neutral | minArea=30 | 38 blobs
+fig_blob_3_min_areal | person 3 Neutral | minArea=100 | 18 blobs
+fig_blob_3_min_areal | person 3 Neutral | minArea=300 | 12 blobs
+fig_blob_3_min_areal | person 9 Surprised | minArea=10 | 106 blobs
+fig_blob_3_min_areal | person 9 Surprised | minArea=30 | 40 blobs
+fig_blob_3_min_areal | person 9 Surprised | minArea=100 | 21 blobs
+fig_blob_3_min_areal | person 9 Surprised | minArea=300 | 9 blobs
+fig_blob_4_terskler | person 3 Neutral | Thresholds 10-200 | 38 blobs
+fig_blob_4_terskler | person 3 Neutral | Thresholds 50-150 | 27 blobs
+fig_blob_4_terskler | person 3 Neutral | Thresholds 10-100 | 22 blobs
+fig_blob_4_terskler | person 9 Surprised | Thresholds 10-200 | 40 blobs
+fig_blob_4_terskler | person 9 Surprised | Thresholds 50-150 | 29 blobs
+fig_blob_4_terskler | person 9 Surprised | Thresholds 10-100 | 23 blobs
+fig_blob_5_sirkularitet | person 3 Neutral | No circularity filter | 38 blobs
+fig_blob_5_sirkularitet | person 3 Neutral | minCircularity=0.5 | 9 blobs
+fig_blob_5_sirkularitet | person 3 Neutral | minCircularity=0.8 | 0 blobs
+fig_blob_5_sirkularitet | person 9 Surprised | No circularity filter | 40 blobs
+fig_blob_5_sirkularitet | person 9 Surprised | minCircularity=0.5 | 10 blobs
+fig_blob_5_sirkularitet | person 9 Surprised | minCircularity=0.8 | 2 blobs
+
+[tab_kontur_per_bilde]
+ person   uttrykk  antall  fjernet_smaa  areal_snitt  areal_storst  omkrets_snitt  omkrets_storst
+      3   Neutral      12            30       3345.0       28966.0          394.0          2143.0
+      3 Surprised      12            15       4238.0       43585.0          378.0          2366.0
+      9   Neutral       5            12      19583.0       96622.0          620.0          2658.0
+      9 Surprised       3            10      32857.0       97752.0         1120.0          2989.0
+     13   Neutral       5            13      12767.0       61300.0          633.0          2549.0
+     13 Surprised       8            37       9274.0       71830.0          504.0          3238.0
+     18   Neutral      11            14       4609.0       45246.0          284.0          1793.0
+     18 Surprised       7             8       9749.0       65582.0          404.0          1998.0
+fig_kontur_3_terskel | person 3 Neutral | Threshold 80 | 13 contours
+fig_kontur_3_terskel | person 3 Neutral | Threshold 120 | 12 contours
+fig_kontur_3_terskel | person 3 Neutral | Threshold 160 | 7 contours
+fig_kontur_3_terskel | person 3 Neutral | Otsu | 5 contours
+fig_kontur_3_terskel | person 9 Surprised | Threshold 80 | 13 contours
+fig_kontur_3_terskel | person 9 Surprised | Threshold 120 | 3 contours
+fig_kontur_3_terskel | person 9 Surprised | Threshold 160 | 5 contours
+fig_kontur_3_terskel | person 9 Surprised | Otsu | 8 contours
+fig_kontur_4_filter | person 3 Neutral | Blur 3x3 | 13 contours
+fig_kontur_4_filter | person 3 Neutral | Blur 7x7 | 11 contours
+fig_kontur_4_filter | person 3 Neutral | Blur 11x11 | 13 contours
+fig_kontur_4_filter | person 9 Surprised | Blur 3x3 | 3 contours
+fig_kontur_4_filter | person 9 Surprised | Blur 7x7 | 3 contours
+fig_kontur_4_filter | person 9 Surprised | Blur 11x11 | 4 contours
+fig_kontur_5_modus | person 3 Neutral | RETR_EXTERNAL | 12 contours
+fig_kontur_5_modus | person 3 Neutral | RETR_LIST | 13 contours
+fig_kontur_5_modus | person 9 Surprised | RETR_EXTERNAL | 3 contours
+fig_kontur_5_modus | person 9 Surprised | RETR_LIST | 14 contours
+fig_kontur_6_polaritet | person 3 Neutral | Dark regions (INV) | 12 contours
+fig_kontur_6_polaritet | person 3 Neutral | Bright regions | 2 contours
+fig_kontur_6_polaritet | person 9 Surprised | Dark regions (INV) | 3 contours
+fig_kontur_6_polaritet | person 9 Surprised | Bright regions | 12 contours
+fig_kontur_7_canny | person 3 Neutral | Canny 50/150 | 70 contours
+fig_kontur_7_canny | person 3 Neutral | Canny 100/200 | 43 contours
+fig_kontur_7_canny | person 9 Surprised | Canny 50/150 | 57 contours
+fig_kontur_7_canny | person 9 Surprised | Canny 100/200 | 39 contours
+Kontur: Otsu-terskel for person 3 Neutral = 158
+Kontur: Otsu-terskel for person 9 Surprised = 95
+
+[tab_blob_mot_kontur]
+ person   uttrykk  antall_blobs  antall_konturer
+      3   Neutral            38               12
+      3 Surprised            36               12
+      9   Neutral            30                5
+      9 Surprised            40                3
+     13   Neutral            32                5
+     13 Surprised            51                8
+     18   Neutral            19               11
+     18 Surprised            16                7
